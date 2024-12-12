@@ -12,7 +12,7 @@
             background-color: #121212;
             color: #f5f5f5;
             display: flex;
-            height: calc(100vh -10px);
+            height: calc(100vh - 10px);
         }
         nav {
             width: 225px;
@@ -20,6 +20,13 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
+            position: fixed;
+            height: 100%;
+            left: -225px;
+            transition: left 0.3s ease;
+        }
+        nav.open {
+            left: 0;
         }
         nav a {
             color: #f5f5f5;
@@ -30,15 +37,15 @@
             transition: background-color 0.3s ease;
         }
         nav a:last-child {
-        position: absolute; 
-        bottom: 0;
-        left: 9%; 
-        transform: translateX(-50%); 
-        margin-bottom: 10px; 
-        padding: 10px;
-        text-align: center;
-        width: 200px; 
-        box-sizing: border-box; 
+            position: absolute; 
+            bottom: 0;
+            left: 9%; 
+            transform: translateX(-50%); 
+            margin-bottom: 10px; 
+            padding: 10px;
+            text-align: center;
+            width: 200px; 
+            box-sizing: border-box; 
         }
         nav a:hover {
             background-color: #3a3a3a;
@@ -47,6 +54,8 @@
             flex-grow: 1;
             padding: 20px;
             background-color: #121212;
+            margin-left: 225px;
+            transition: margin-left 0.3s ease;
         }
         iframe {
             width: 100%;
@@ -55,12 +64,42 @@
             min-height: 300px;
             border-radius: 10px;
         }
-        
+        #toggle-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: #2a2a2a;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #toggle-btn:hover {
+            background-color: #3a3a3a;
+        }
+        #toggle-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        #toggle-icon div {
+            width: 20px;
+            height: 3px;
+            background-color: #f5f5f5;
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body>
 
-    <nav>
+    <nav id="sidebar">
+        <br>
         <h2>IIITDM Kancheepuram</h2>
         <a href="#" onclick="switchContent('https://iiitdm-calendar.vercel.app/')">Academic Calendar</a>
         <a href="#" onclick="switchContent('https://iiitdm-gpa-calculator.vercel.app/')">GPA Calculator</a>
@@ -71,10 +110,23 @@
         <iframe id="content-frame" src="https://iiitdm-calendar.vercel.app/"></iframe>
     </main>
 
+    <div id="toggle-btn">
+        <div id="toggle-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
     <script>
         function switchContent(url) {
             document.getElementById('content-frame').src = url;
         }
+
+        document.getElementById('toggle-btn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.querySelector('main').style.marginLeft = document.getElementById('sidebar').classList.contains('open') ? '225px' : '0';
+        });
     </script>
 
 </body>
