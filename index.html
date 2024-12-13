@@ -6,9 +6,9 @@
     <title>IIITDM Student Dashboard</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 10px;
+            padding: 2px;
             background-color: #121212;
             color: #f5f5f5;
             display: flex;
@@ -17,16 +17,17 @@
         nav {
             width: 225px;
             background-color: #121212;
-            padding: 20px;
+            margin: 10px;
             display: flex;
             flex-direction: column;
             position: fixed;
             height: 100%;
-            left: -225px;
+            left: 0px;
             transition: left 0.3s ease;
+            overflow: hidden;
         }
         nav.open {
-            left: 0;
+            left: -225px;
         }
         nav a {
             color: #f5f5f5;
@@ -36,23 +37,19 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-        nav a:last-child {
-            position: absolute; 
-            bottom: 0;
-            left: 9%; 
-            transform: translateX(-50%); 
-            margin-bottom: 10px; 
-            padding: 10px;
-            text-align: center;
-            width: 200px; 
-            box-sizing: border-box; 
+        nav a:last-of-type {
+        position: absolute;
+        bottom: 20px;
+        margin: 10px;
+        background-color: #009879;
+        text-align: center;
         }
         nav a:hover {
             background-color: #3a3a3a;
         }
         main {
             flex-grow: 1;
-            padding: 10px;
+            margin: 10px;
             background-color: #121212;
             margin-left: 225px;
             transition: margin-left 0.3s ease;
@@ -99,11 +96,14 @@
 <body>
 
     <nav id="sidebar">
-        <br>
+        <br><br>
         <h2>IIITDM Kancheepuram</h2>
+        <div id="toggle-icon">
+            <div style="width: 200px"></div>
+        </div>
         <a href="#" onclick="switchContent('https://iiitdm-calendar.vercel.app/')">Academic Calendar</a>
         <a href="#" onclick="switchContent('https://iiitdm-gpa-calculator.vercel.app/')">GPA Calculator</a>
-        <a href="https://github.com/pengeon1">Made by Piyush Mishra</a>
+        <a href="https://github.com/pengeon1" style="background-color: #009879;">Made by Piyush Mishra</a>
     </nav>
 
     <main>
@@ -125,7 +125,7 @@
 
         document.getElementById('toggle-btn').addEventListener('click', function() {
             document.getElementById('sidebar').classList.toggle('open');
-            document.querySelector('main').style.marginLeft = document.getElementById('sidebar').classList.contains('open') ? '225px' : '0';
+            document.querySelector('main').style.marginLeft = document.getElementById('sidebar').classList.contains('open') ? '0px' : '225px';
         });
     </script>
 
