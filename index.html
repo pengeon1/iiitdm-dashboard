@@ -50,6 +50,7 @@
         iframe {
             width: 100%;
             border: none;
+            margin-left: 10px;
             height: calc(100vh - 60px); 
             min-height: 300px;
             border-radius: 10px;
@@ -93,6 +94,7 @@
             flex-wrap: wrap;
             align-items: center;
             gap: 10px;
+            z-index: 2;
         }
         .footer-text {
             font-size: 13px;
@@ -116,8 +118,10 @@
 <body>
 
     <nav id="sidebar">
-        <br><br>
-        <h2>IIITDM Kancheepuram</h2>
+        <br><br><br>
+        <a href="https://iiitdm.ac.in">
+        <img src="https://lh5.googleusercontent.com/proxy/yyydNopx31QVxtaJRr5LI3ChfLTrp3EcvQzlVOYEw3ALH2vaF7rWTM70KPiiBXX1-mppioPmt5bR0RW9_NJyx7CMLLLMvHNSxYMt7knT_mOPFyph4A" alt="W3Schools.com" style="width: 200px;"></a>
+        <h2 style="font-size: 16px;">Student Dashboard</h2>
         <div id="toggle-icon">
             <div style="width: 200px"></div>
         </div>
@@ -155,6 +159,17 @@
     </div>
 
     <script>
+        function adjustIframeHeight() {
+            const footer = document.querySelector('.footer');
+            const iframe = document.getElementById('content-frame');
+            const footerHeight = footer.offsetHeight + 20; // 20px for spacing
+            const availableHeight = window.innerHeight - footerHeight - 20; // 20px for margins
+            iframe.style.height = `${availableHeight}px`;
+        }
+
+        window.addEventListener('load', adjustIframeHeight);
+        window.addEventListener('resize', adjustIframeHeight);
+
         function switchContent(url) {
             document.getElementById('content-frame').src = url;
         }
