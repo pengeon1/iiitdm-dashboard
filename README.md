@@ -5,6 +5,7 @@
 ### - Introducing IIIT Lite, the academic student dashboard for the students of IIITDM Kancheepuram:
 ### - [Academic calendar](https://iiitdm-calendar.vercel.app/)
 ### - [Attendance Viewer](https://iiitdm-attendance.vercel.app/)
+### - [Today's Mess Menu](https://mess-display.vercel.app/)
 ### - [GPA calculator](https://iiitdm-gpa-calculator.vercel.app/)
 ### - [PDF Tools (Merge, count, rotate)](https://pdf-utilities-vvvv.vercel.app/)
 ### - Hope this helps you ;)
