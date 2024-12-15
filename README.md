@@ -2,12 +2,13 @@
 
 # [IIITDM Kancheepuram Student Dashboard](https://iiitdm-dashboard.vercel.app/)
 
-### - Introducing the academic student dashboard for the students of IIITDM Kancheepuram:
+### - Introducing IIIT Lite, the academic student dashboard for the students of IIITDM Kancheepuram:
 ### - [Academic calendar](https://iiitdm-calendar.vercel.app/)
+### - [Attendance Viewer](https://iiitdm-attendance.vercel.app/)
 ### - [GPA calculator](https://iiitdm-gpa-calculator.vercel.app/)
-### - PDF Tools (Merge, count, rotate) by [Vishwanth V](https://github.com/vvvv5215)
+### - [PDF Tools (Merge, count, rotate)](https://pdf-utilities-vvvv.vercel.app/)
 ### - Hope this helps you ;)
-### - https://iiitdm-dashboard.vercel.app/
+### - https://iiitdm-dashboard.vercel.app/ or https://iiitlite.vercel.app/
 
 ---
-Made by [Piyush Mishra](https://github.com/pengeon1)
+Made by [Piyush Mishra](https://github.com/pengeon1) and [Vishwanth V](https://github.com/vvvv5215)
